@@ -6,7 +6,7 @@ import mockData from '../components/usersdata';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    padding: theme.spacing(3)
+    padding: theme.spacing(3),
   },
   content: {
     marginTop: theme.spacing(2)

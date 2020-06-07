@@ -1,5 +1,4 @@
 import React, { useState }from 'react';
-import clsx from 'clsx';
 import { Box, Container, CssBaseline } from '@material-ui/core';
 import red from '@material-ui/core/colors/red';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
@@ -12,43 +11,32 @@ import { Topbar } from '../components/Topbar';
 import { Sidebar } from '../components/Sidebar';
 import { useMediaQuery, colors } from '@material-ui/core';
 import palette from '../theme/palette';
-import typography from '../theme/typography';
-import overrides from '../theme/overrides';
 
 // Create a theme instance.
 export const theme = createMuiTheme({
-  palette,
-  typography,
-  overrides,
-  zIndex: {
-    appBar: 1200,
-    drawer: 1100
+  palette: {
+    primary: {
+      main: '#388e3c'
+    },
+    error: {
+      main: red.A400
+    },
+    background: {
+      default: '#edeff2'
+    },
+    color: {
+      default: '#fff'
+    },
+    zIndex: {
+      appBar: 1200,
+      drawer: 1100
+    }
   }
 });
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    paddingTop: 56,
-    height: '100%',
-    ['(min-width:600px)']: {
-      paddingTop: 64
-    }
-  },
-  shiftContent: {
-    paddingLeft: 240
-  },
-  content: {
-    height: '100%'
-  }
-}));
 
 function MyApp({ Component, pageProps }) {
 
   const [openSidebar, setOpenSidebar] = useState(false);
-
-  const isDesktop = useMediaQuery('(min-width:1280px)', {
-    defaultMatches: true
-  });
 
   const handleSidebarOpen = () => {
     setOpenSidebar(true);
@@ -58,9 +46,7 @@ function MyApp({ Component, pageProps }) {
     setOpenSidebar(false);
   };
 
-  const classes = useStyles();
-
-  const shouldOpenSidebar = isDesktop ? true : openSidebar;
+  const shouldOpenSidebar = openSidebar;
 
   return (
       <React.Fragment>
@@ -73,22 +59,17 @@ function MyApp({ Component, pageProps }) {
         </Head>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <div className={clsx({
-              [classes.root]: true,
-              [classes.shiftContent]: isDesktop
-            })}>
-            <Topbar onSidebarOpen={handleSidebarOpen}/>
-            <Sidebar
-              onClose={handleSidebarClose}
-              open={shouldOpenSidebar}
-              variant={isDesktop ? 'persistent' : 'temporary'}
-            />
-            <Container maxWidth={false}>
-              <Box marginTop={2}>
-                <Component {...pageProps} />
-              </Box>
-            </Container>
-          </div>
+          <Topbar onSidebarOpen={handleSidebarOpen}/>
+          <Sidebar
+            onClose={handleSidebarClose}
+            open={shouldOpenSidebar}
+            variant={'temporary'}
+          />
+          <Container maxWidth={false}>
+            <Box marginTop={2}>
+              <Component {...pageProps} />
+            </Box>
+          </Container>
         </ThemeProvider>
       </React.Fragment>
   );
