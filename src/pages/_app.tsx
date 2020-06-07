@@ -28,7 +28,6 @@ export const theme = createMuiTheme({
 
 const useStyles = makeStyles(theme => ({
   root: {
-    paddingTop: 56,
     height: '100%',
     ['(min-width:600px)']: {
       paddingTop: 64

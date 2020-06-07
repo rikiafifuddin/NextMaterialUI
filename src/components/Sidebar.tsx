@@ -3,15 +3,18 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { Divider, Drawer } from '@material-ui/core';
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import PeopleIcon from '@material-ui/icons/People';
+import DashboardRoundedIcon from '@material-ui/icons/DashboardRounded';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import TextFieldsIcon from '@material-ui/icons/TextFields';
 import ImageIcon from '@material-ui/icons/Image';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import SettingsIcon from '@material-ui/icons/Settings';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
-import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
+import AssignmentIndRoundedIcon from '@material-ui/icons/AssignmentIndRounded';
+import AccountBalanceRoundedIcon from '@material-ui/icons/AccountBalanceRounded';
+import PlaylistAddCheckRoundedIcon from '@material-ui/icons/PlaylistAddCheckRounded';
+import Brightness5RoundedIcon from '@material-ui/icons/Brightness5Rounded';
+import StarsRoundedIcon from '@material-ui/icons/StarsRounded';
 import { Profile } from './Profile';
 import { SidebarNav } from './SidebarNav';
 
@@ -48,37 +51,37 @@ export function Sidebar(props) {
     {
       title: 'Dashboard',
       href: '/dashboard',
-      icon: <DashboardIcon />
+      icon: <DashboardRoundedIcon />
     },
     {
       title: 'Pengelolaan Mitra',
       href: '/mitra',
-      icon: <AccountBalanceIcon />
+      icon: <AccountBalanceRoundedIcon />
     },
     {
       title: 'Pengelolaan Peserta',
       href: '/peserta',
-      icon: <PeopleIcon />
+      icon: <AssignmentIndRoundedIcon />
     },
     {
       title: 'Produk Konvensional',
       href: '/konvensional',
-      icon: <ShoppingBasketIcon />
+      icon: <StarsRoundedIcon />
     },
     {
       title: 'Produk Syariah',
       href: '/syariah',
-      icon: <ShoppingBasketIcon />
+      icon: <Brightness5RoundedIcon />
     },
     {
       title: 'Daftar Eligible',
       href: '/eligible',
-      icon: <AccountBalanceIcon />
+      icon: <PlaylistAddCheckRoundedIcon />
     },
     {
       title: 'Pengelolaan Bank',
       href: '/pengelolaan',
-      icon: <AccountBalanceIcon />
+      icon: <AccountBalanceRoundedIcon />
     },
   ];
 
