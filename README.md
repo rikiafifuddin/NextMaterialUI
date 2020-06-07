@@ -1,2 +1,2 @@
-## Car Trader
- A simple app for searching secondhand car, built with NextJS, SQLite and MaterialUI
+## NextJS Material UI
+Integrated Material UI component for nextJS
